@@ -5,8 +5,7 @@ import { FaPenFancy } from "react-icons/fa6";
   import Swal from 'sweetalert2'
   import Spinner from "../componets/Spinner";
   import { FaLayerGroup } from "react-icons/fa";
-
-
+  import  Menu  from "../componets/menu"
 function Dashboard() {
   const [datos, setDatos] = useState([]);
   const [user, setUser] = useState([]);
@@ -88,6 +87,7 @@ const [selected, setSelected] = useState(null);
   
   
   <div className="">
+    <Menu/>
 <p className="text-2xl font-bold text-gray-800 mb-4">Seleccion: {selected?.id} - {selected?.nombre}</p>
      <select
   className="
@@ -133,7 +133,7 @@ const [selected, setSelected] = useState(null);
 
 
 
-          <thead className="bborder-collapse border border-gray-400 bg-slate-400 text-gray-700 uppercase text-xs">
+          <thead className="bborder-collapse border border-black bg-slate-400 text-gray-700 uppercase text-xs">
             <tr>
               <th className="border border-gray-300 px-2 py-2">FECHA</th>
               <th className="border border-gray-300  px-2 py-2">CLAVE DE ACCESO</th>

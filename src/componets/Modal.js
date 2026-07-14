@@ -11,13 +11,13 @@ function Modal({ open, onClose, title, children, staticModal = false}) {
       ></div>
 
       {/* Contenido */}
-      <div className="relative bg-white rounded-xl shadow-xl p-6 w-full max-w-xl">
+      <div className="relative bg-white rounded-xl shadow-xl p-3 w-full max-w-screen-lg">
         
         {/* Título */}
         <h2 className="text-xl font-bold mb-4">{title}</h2>
 
   <hr />
-        <br />
+        
 
       
 
