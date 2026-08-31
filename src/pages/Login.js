@@ -54,19 +54,19 @@ function Login() {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center w-full gap-2 h-screen bg-gray-100">
+    <div className="flex  flex-col justify-center items-center w-full gap-1 h-screen bg-gray-100 ">
         <div className="flex"   >
             <img src="https://sbptybwhjnosfidplkyp.supabase.co/storage/v1/object/public/qsoft/1c58307f36be045cbf5ff99a917339a1.png" alt="Logo" className="mb-6 w-80 mx-auto rounded-2xl shadow-xl" />
         </div>
-        <div className="flex flex-col justify-center items-center "   >
-    <form onSubmit={handleLogin}>
+        <div className="flex justify-center items-center w-full "   >
+    <form onSubmit={handleLogin} className="flex flex-col p-8 mb-4 w-full max-w-sm">
       <input className=" mb-3 font-bold text-gray-700 border-2 border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
         type="text"
         placeholder="CÉDULA"
         value={cedula}
         onChange={(e) => setCedula(e.target.value)}
       />
-      <br />
+      
       {loading && <Spinner fullScreen size="lg" text="Procesando..."  />}
 
       <input className="mb-3 font-bold text-gray-700 border-2 border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
@@ -75,7 +75,7 @@ function Login() {
         value={clave}
         onChange={(e) => setClave(e.target.value)}
       />
-      <br />
+      
 
       <button className="w-full bg-blue-950 text-white py-2 rounded hover:bg-blue-900" type="submit" >
         Iniciar sesión

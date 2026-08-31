@@ -7,6 +7,7 @@ import { BsBoxSeamFill } from "react-icons/bs";
 import { BsPersonBadgeFill } from "react-icons/bs";
 import { BsServer } from "react-icons/bs";
 import { BiSolidCreditCardFront } from "react-icons/bi";
+import {ingreso} from "./orden/ingreso"
 
 function Principal() {
 
@@ -18,6 +19,11 @@ function Principal() {
    const newOrden = () => {
     
      window.location.href = "/newOrden";
+  };
+
+   const ingreso = () => {
+    
+     window.location.href = "/ingreso";
   };
 
    const token = localStorage.getItem("token");
@@ -95,8 +101,8 @@ function Principal() {
             </div>
 
             
-            <div className="flex  justify-between bg-slate-600 text-slate-100 p-12 border-spacing-x-1 shadow-xl rounded-md m-2 hover:bg-slate-500 cursor-pointer ">
-              <TbReportSearch className="text-slate-300 text-5xl m-0"/>VER MESAS
+            <div onClick={() => ingreso()} className="flex  justify-between bg-slate-600 text-slate-100 p-12 border-spacing-x-1 shadow-xl rounded-md m-2 hover:bg-slate-500 cursor-pointer ">
+              <TbReportSearch className="text-slate-300 text-5xl m-0"/>INGRESO 
             </div>
 
             

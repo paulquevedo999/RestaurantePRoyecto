@@ -9,6 +9,7 @@ import "./index.css";
 import LoginPage from "./pages/LoginPage";
 import Principal from "./pages/Principal";
 import NewOrden from "./pages/orden/newOrden";
+import Ingreso from "./pages/orden/ingreso";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -27,6 +28,15 @@ ReactDOM.createRoot(document.getElementById("root")).render(
               </ProtectedRoute>
             }
           />
+            <Route
+            path="/ingreso"
+            element={
+              <ProtectedRoute>
+                <Ingreso />
+              </ProtectedRoute>
+            }
+          />
+
 
             <Route
             path="/newOrden"

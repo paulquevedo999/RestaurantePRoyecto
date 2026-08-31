@@ -129,11 +129,12 @@ function NewOrden() {
 
   const cargarMesa = useCallback(async (id_agencia) => {
 
-    setMesas([])
+    
 
     try {        
        setLoading(true);
         setOpen(true)
+        setMesas([])
         
 
         const res = await api.get(`procesos/1`,
@@ -247,9 +248,9 @@ function NewOrden() {
       <canvas 
         ref={canvasRef}
         width={1000}
-        height={550}
+        height={600}
        
-        className="border-s-cyan-800  border-gray-400 rounded shadow"
+        className=" border-gray-400 rounded shadow"
       />
     </div>
         
