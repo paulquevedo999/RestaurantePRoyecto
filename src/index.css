@@ -2,7 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@layer components {
+
+.btn-login{
+  @apply   w-full bg-orange-600 text-slate-50 py-2 rounded  text-lg hover:bg-white hover:border-e-blue-950 hover:text-blue-950 border-2 border-e-gray-100 font-bold font-['Montserrat']
+}
+
 .btn-principal {
-    @apply bg-blue-950 text-white rounded-lg px-4 py-2 font-semibold hover:bg-blue-800 transition;
+    @apply bg-blue-950 text-white rounded-lg px-4 py-2 font-semibold hover:bg-blue-800 transition ;
   }
+
+  
+
+.label_eti1 {
+  @apply text-gray-50  text-lg mb-2  font-['Montserrat'] font-bold
+}
+
+.caja_detexto{
+  @apply bg-slate-50 p-3  rounded-md border border-gray-400 mb-2 font-['Montserrat']   text-lg
+}
+
+.social {
+
+   @apply p-2 font-bold text-4xl  cursor-pointer
+
+}
+
+}
+
 

@@ -3,6 +3,9 @@ import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import api from "../api/axios";
 import Spinner from "../componets/Spinner";
 import Swal from 'sweetalert2'
+import { FaFacebookSquare } from "react-icons/fa";
+import { SlSocialInstagram } from "react-icons/sl";
+import { MdMail } from "react-icons/md";
 
 
 function Login() {
@@ -24,12 +27,25 @@ function Login() {
       return;
     }
 
+    if(cedula === "" || password === "")
+      {
+         Swal.fire({
+      
+        text: "Ingrese correctamente los datos",
+        icon: 'info',
+        confirmButtonText: 'Ok'
+      })
+
+      }
+      else{
+
     try {
       // 🔥 GENERAR TOKEN CORRECTAMENTE
       const token = await executeRecaptcha("login");
 
       // 🔥 ENVIAR TOKEN POR URL (como pide tu backend)
       setLoading(true);
+      
       const res = await api.post(`/login/${token}`, {
         cedula,
         password,
@@ -46,43 +62,64 @@ function Login() {
       
         text: "Información incorrecta",
         icon: 'error',
-        confirmButtonText: 'Ok'
+        confirmButtonText: 'Acaptar'
       })
 
        setLoading(false);
     }
+  }
+  
+  
   };
 
   return (
-    <div className="flex  flex-col justify-center items-center w-full gap-1 h-screen bg-gray-100 ">
-        <div className="flex"   >
-            <img src="https://sbptybwhjnosfidplkyp.supabase.co/storage/v1/object/public/qsoft/1c58307f36be045cbf5ff99a917339a1.png" alt="Logo" className="mb-6 w-80 mx-auto rounded-2xl shadow-xl" />
+
+    <div className="flex flex-col sm:flex-row justify-center items-center w-full gap-7 min-h-screen bg-[#142234] p-8">
+        <div className="w-full sm:w-2/3 items-center 
+      "   >
+            <img src="https://sbptybwhjnosfidplkyp.supabase.co/storage/v1/object/public/qsoft/ChatGPT%20Image%201%20may%202026,%2009_51_02.png" alt="Logo" className="rounded-3xl mb-6 w-auto mx-auto " />
         </div>
-        <div className="flex justify-center items-center w-full "   >
-    <form onSubmit={handleLogin} className="flex flex-col p-8 mb-4 w-full max-w-sm">
-      <input className=" mb-3 font-bold text-gray-700 border-2 border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+        <div className=" sm:w-1/4 justify-center items-center w-full"   >
+        <p className="text-center   font-extrabold text-4xl  p-1 rounded-xl text-gray-50 font-montserrat">Inicio de Sesión</p>
+    <form onSubmit={handleLogin} className="flex flex-col  p-8 ">
+      <label className="label_eti1">Cédula: </label>
+      <input className="caja_detexto"
         type="text"
-        placeholder="CÉDULA"
+   
         value={cedula}
         onChange={(e) => setCedula(e.target.value)}
       />
-      
+    
       {loading && <Spinner fullScreen size="lg" text="Procesando..."  />}
 
-      <input className="mb-3 font-bold text-gray-700 border-2 border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+      <label className="label_eti1">Contraseña: </label>
+      <input className="caja_detexto"
         type="password"
-        placeholder="CONTRASEÑA"
+       
         value={clave}
         onChange={(e) => setClave(e.target.value)}
       />
       
+      <br></br>
 
-      <button className="w-full bg-blue-950 text-white py-2 rounded hover:bg-blue-900" type="submit" >
+     
+
+      <button className="btn-login mt-4" type="submit" >
         Iniciar sesión
       </button>
     </form>
+     <div className="flex flex-row gap-4 items-center justify-center " >
+        <div className="social text-blue-800" ><FaFacebookSquare /></div>
+        <div className="social text-rose-900" ><SlSocialInstagram /></div>
+        <div className="social text-stone-600" ><MdMail /></div>
+      
+     </div>
+     <p className="text-slate-400 text-center pt-4 font-bold font text-xs" >Versión: 1.0.0</p>
     </div>
+    
+    
     </div>
+    
   );
 }
 
