@@ -1,13 +1,17 @@
-import { CgAdd } from "react-icons/cg";
+//import { CgAdd } from "react-icons/cg";
 import { HiLockClosed } from "react-icons/hi2";
-import { TbReportSearch } from "react-icons/tb";
+
 import { useEffect, useState, useCallback } from "react";
 import { jwtDecode } from "jwt-decode";
-import { BsBoxSeamFill } from "react-icons/bs";
-import { BsPersonBadgeFill } from "react-icons/bs";
-import { BsServer } from "react-icons/bs";
-import { BiSolidCreditCardFront } from "react-icons/bi";
-import {ingreso} from "./orden/ingreso"
+
+
+import { MdStorage } from "react-icons/md";
+import { SiReadthedocs } from "react-icons/si";
+import { RiStockFill } from "react-icons/ri";
+import { GiCube } from "react-icons/gi";
+import Footer from "../componets/Footer"
+
+import { FaFileInvoiceDollar } from "react-icons/fa6";
 
 function Principal() {
 
@@ -16,11 +20,27 @@ function Principal() {
     window.location.href = "/";
   };
 
-   const newOrden = () => {
+  
+     const xautorizar = () => {
+    
+     window.location.href = "/facturasxautorizar";
+  };
+
+
+  /* const newOrden = () => {
     
      window.location.href = "/newOrden";
   };
+*/
+  const bodega = () => {
+    
+     window.location.href = "/bodega";
+  };
 
+  const reportes = () => {
+    
+     window.location.href = "/reportes";
+  };
    const ingreso = () => {
     
      window.location.href = "/ingreso";
@@ -56,70 +76,56 @@ function Principal() {
 
     <div>
     
-        <div className="bg-slate-700 text-center font-bold text-white p-4 text-2xl ">  .:: MENÚ PRINCIPAL ::. </div>
+        <div className="  flex  flex-row items-center   bg-slate-700 text-center font-bold text-white p-8 text-2xl "> <GiCube className="mr-6 ml-4  text-zinc-400 text-6xl" />  MENÚ PRINCIPAL </div>
 
 
         
 
-        <div className="grid sm:grid-cols-3
-                md:grid-cols-3
-                lg:grid-cols-4
-                xl:grid-cols-4 bg-slate-300 p-2 items-center sm:items-center gap-2">
-            <div className="flex items-center gap-5">
-                 <BsBoxSeamFill className="text-xl text-cyan-700 font-bold" />
-                 <span className="font-bold">{user.usuarioNombreComercial}</span>
-            </div>
-            <div className="flex items-center gap-5">
-                 <BsPersonBadgeFill className="text-xl text-cyan-700 font-bold" />
-                 <span className="font-bold">{user.usuarioname} {user.usuarioapellido}</span>
-            </div>
-              <div className="flex items-center gap-5">
-                 <BsServer  className="text-xl text-cyan-700 font-bold" />
-                 <span className="font-bold">{user.UsuarioAmbiente}</span>
-            </div>
-             <div className="flex items-center gap-5">
-                 <BiSolidCreditCardFront  className="text-xl text-cyan-700 font-bold" />
-                 <span className="font-bold">{user.usuarioAgenciaruc}</span>
-            </div>
-           
-        </div>
+      
 
 
 
-<div className="container mx-auto p-4">
+<div className=" container mx-auto p-9 uppercase ">
         <div className="grid
                 grid-cols-1
                 sm:grid-cols-2
                 md:grid-cols-3
-                lg:grid-cols-4
-                xl:grid-cols-5
-                gap-6 bg-zinc-200 text-center font-bold text-slate-700 p-4 ">
+                lg:grid-cols-3
+                xl:grid-cols-3
+                uppercase
+                shadow-lg border
+                gap-6 bg-gray-100 text-center font-bold text-slate-700 p-6 ">
 
 
-            <div onClick={() => newOrden()} className="flex  justify-between bg-slate-600 text-slate-100 p-12 border-spacing-x-1 shadow-xl rounded-md m-2 hover:bg-slate-500 cursor-pointer ">
+          { /*div onClick={() => newOrden()} className="menuP">
               <CgAdd className="text-slate-300 text-5xl "/>NUEVA ORDEN
             </div>
 
-            
-            <div onClick={() => ingreso()} className="flex  justify-between bg-slate-600 text-slate-100 p-12 border-spacing-x-1 shadow-xl rounded-md m-2 hover:bg-slate-500 cursor-pointer ">
-              <TbReportSearch className="text-slate-300 text-5xl m-0"/>INGRESO 
+ */}  
+            <div onClick={() => ingreso()} className="menuP">
+              <RiStockFill  className="text-slate-300 text-7xl  "/>ajuste por ingresos  
             </div>
 
             
-            <div className="flex  justify-between bg-slate-600 text-slate-100 p-12 border-spacing-x-1 shadow-xl rounded-md m-2 hover:bg-slate-500 cursor-pointer ">
-              <CgAdd className="text-slate-300 text-5xl "/>NUEVA ORDEN
-            </div>
-
-
-            
-            <div className="flex  justify-between bg-slate-600 text-slate-100 p-12 border-spacing-x-1 shadow-xl rounded-md m-2 hover:bg-slate-500 cursor-pointer ">
-              <CgAdd className="text-slate-300 text-5xl "/>NUEVA ORDEN
+            <div onClick={() => bodega()} className="menuP">
+              <MdStorage className="text-slate-300 text-7xl "/>ADMINISTRACIÓN DE BODEGAS  
             </div>
 
 
             
-            <div onClick={() => cerrarSesion()} className="flex  justify-between bg-slate-600 text-slate-100 p-12 border-spacing-x-1 shadow-xl rounded-md m-2 hover:bg-slate-500 cursor-pointer ">
-              <HiLockClosed className="text-slate-300 text-5xl "/>CERRAR SESIÓN
+            <div onClick={() => reportes()} className="menuP">
+              <SiReadthedocs  className="text-slate-300 text-7xl "/>REPORTES
+            </div>
+
+
+            
+            <div onClick={() => xautorizar()} className="menuP">
+              <FaFileInvoiceDollar className="text-slate-300 text-7xl "/>FACTURAS ELECTRÓNICA POR AUTORIZAR
+            </div>
+
+
+            <div onClick={() => cerrarSesion()} className="menuP">
+              <HiLockClosed className="text-slate-300 text-7xl "/>CERRAR SESIÓN
             </div>
 
            
@@ -131,13 +137,20 @@ function Principal() {
           
         </div>
 
+
         </div>
 
-       
+         <Footer className="fixed bottom-0 left-0 z-50 w-full bg-[#142234] text-white"
+        empresa= {'   - ' + user.usuarioNombreComercial + '  / RUC: ' + user.usuarioAgenciaruc}
+        sistema="PRODUCCIÓN" 
+        version="1.0.0.0"
+        usuario={user.usuarioname + ' ' + user.usuarioapellido}
+      />
 
 
 
     </div>
+    
 
     
   );

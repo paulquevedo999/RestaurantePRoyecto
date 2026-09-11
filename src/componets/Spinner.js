@@ -29,7 +29,7 @@ function Spinner({
         `}
       ></div>
 
-      {text && <p className="text-sm text-gray-600">{text}</p>}
+      {text && <p className="text-sm text-gray-700">{text}</p>}
     </div>
   );
 

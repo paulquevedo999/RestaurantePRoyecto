@@ -1,12 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
 
 
 @layer components {
 
 .btn-login{
   @apply   w-full bg-orange-600 text-slate-50 py-2 rounded  text-lg hover:bg-white hover:border-e-blue-950 hover:text-blue-950 border-2 border-e-gray-100 font-bold font-['Montserrat']
+}
+
+.btn-sis{
+  @apply   flex flex-row items-center justify-center gap-4 w-full bg-zinc-900 text-slate-50 py-2 rounded  text-lg hover:bg-blue-100 hover:border-blue-950 hover:text-blue-950 border-2 border-e-gray-100 font-bold font-['Montserrat']
 }
 
 .btn-principal {
@@ -16,18 +23,29 @@
   
 
 .label_eti1 {
-  @apply text-gray-50  text-lg mb-2  font-['Montserrat'] font-bold
+  @apply text-gray-50  text-xs mb-2  font-['Montserrat'] font-bold pt-1
 }
 
 .caja_detexto{
-  @apply bg-slate-50 p-3  rounded-md border border-gray-400 mb-2 font-['Montserrat']   text-lg
+  @apply bg-slate-50 p-3  rounded-md border border-gray-400 mb-2 font-['Montserrat']   text-sm font-bold text-zinc-900 focus:shadow-2xl 
 }
 
 .social {
 
-   @apply p-2 font-bold text-4xl  cursor-pointer
+   @apply shadow-sm p-3 font-bold text-2xl  text-white rounded-full cursor-pointer
 
 }
+
+.menuP {
+ @apply  flex flex-col items-center gap-3  border-2 font-['Montserrat'] font-bold border-zinc-50 justify-between bg-[#142234]  text-slate-100 p-12 border-spacing-x-1 shadow-xl rounded-md m-2 hover:bg-slate-500 cursor-pointer 
+}
+
+
+.buttton_1 {
+  @apply flex flex-row justify-center items-center m-1 bg-slate-50  border shadow-lg p-3 rounded-md hover:bg-slate-600 hover:text-white text-3xl
+}
+
+
 
 }
 

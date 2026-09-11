@@ -14,6 +14,7 @@ function Dashboard() {
   const [loading, setLoading] = useState(true);
 
 
+
   const cerrarSesion = () => {
     localStorage.removeItem("token");
     window.location.href = "/";

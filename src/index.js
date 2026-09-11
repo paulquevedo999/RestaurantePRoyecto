@@ -10,6 +10,9 @@ import LoginPage from "./pages/LoginPage";
 import Principal from "./pages/Principal";
 import NewOrden from "./pages/orden/newOrden";
 import Ingreso from "./pages/orden/ingreso";
+import Bodega from "./pages/Bodega/Bodegas"
+import Reportes from './pages/orden/Reportes'
+import Facturas from './pages/orden/Facturas'
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -33,6 +36,31 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             element={
               <ProtectedRoute>
                 <Ingreso />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/facturasxautorizar"
+            element={
+              <ProtectedRoute>
+                <Facturas />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/reportes"
+            element={
+              <ProtectedRoute>
+                <Reportes />
+              </ProtectedRoute>
+            }
+          />
+
+           <Route
+            path="/bodega"
+            element={
+              <ProtectedRoute>
+                <Bodega />
               </ProtectedRoute>
             }
           />

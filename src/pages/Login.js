@@ -79,7 +79,7 @@ function Login() {
       "   >
             <img src="https://sbptybwhjnosfidplkyp.supabase.co/storage/v1/object/public/qsoft/ChatGPT%20Image%201%20may%202026,%2009_51_02.png" alt="Logo" className="rounded-3xl mb-6 w-auto mx-auto " />
         </div>
-        <div className=" sm:w-1/4 justify-center items-center w-full"   >
+        <div className=" sm:w-1/4 justify-center items-center w-full "   >
         <p className="text-center   font-extrabold text-4xl  p-1 rounded-xl text-gray-50 font-montserrat">Inicio de Sesión</p>
     <form onSubmit={handleLogin} className="flex flex-col  p-8 ">
       <label className="label_eti1">Cédula: </label>
@@ -109,9 +109,9 @@ function Login() {
       </button>
     </form>
      <div className="flex flex-row gap-4 items-center justify-center " >
-        <div className="social text-blue-800" ><FaFacebookSquare /></div>
-        <div className="social text-rose-900" ><SlSocialInstagram /></div>
-        <div className="social text-stone-600" ><MdMail /></div>
+        <div className="social bg-blue-800 " ><FaFacebookSquare /></div>
+        <div className="social bg-rose-600" ><SlSocialInstagram /></div>
+        <div className="social bg-stone-500 " ><MdMail /></div>
       
      </div>
      <p className="text-slate-400 text-center pt-4 font-bold font text-xs" >Versión: 1.0.0</p>
