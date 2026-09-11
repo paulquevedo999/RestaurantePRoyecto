@@ -46,7 +46,7 @@ function Login() {
       // 🔥 ENVIAR TOKEN POR URL (como pide tu backend)
       setLoading(true);
       
-      const res = await api.post(`/login/${token}`, {
+      const res = await api.post(`/login/appqsoft1/${token}`, {
         cedula,
         password,
       });
