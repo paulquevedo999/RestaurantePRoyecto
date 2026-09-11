@@ -5,7 +5,7 @@ import api from "../../api/axios";
 
 import Spinner from "../../componets/Spinner";
 
-import Swal from 'sweetalert2'
+
 import { MdForward } from "react-icons/md";
 
   import { SiReadthedocs } from "react-icons/si";
@@ -15,63 +15,25 @@ function Reportes() {
 
   const [datos, setDatos] = useState([]);
     const [datosb, setDatosb] = useState([]);
-  const [idBodega, setidBodega] = useState(0); 
-  const [idArticulo, setidArticulo] = useState(0);
+
 
   const token = localStorage.getItem("token");
-  const [articulos, setArticulos] = useState([]);
+
   const [loading, setLoading] = useState(true);
 
 
 
-  const [unidaddemedida, setunidaddemedida] = useState("")
+  
   const [seleccionadoB, setSeleccionadoB] = useState(null);
-   const [seleccionadoA, setSeleccionadoA] = useState(null);
- const [texto_v, settexto_v] = useState({
-        ingreso: '',
-        bodega: '',
-        articulo: '',
-        cant: ''
-      });
-   
+
+
 
 
 
 
  
 
-  const handleArticulo = (e) => {
-
-    try {
-      setSeleccionadoA(e)
-
-  const id = Number(e);
-
-  setidArticulo(id);
-
-  const articuloSeleccionado = articulos.find(
-    (art) => art.id === id
-  );
-
-  if (articuloSeleccionado) {
-    setunidaddemedida(articuloSeleccionado.medida.nombre);
-
-    settexto_v(
-      {
-        ingreso: texto_v.ingreso,
-        bodega: texto_v.bodega,
-        articulo: articuloSeleccionado.nombre + ' ►',
-        cant: texto_v.bodega
-      }
-    )
-    
-   // settexto_v(texto_v + " / " + articuloSeleccionado.nombre)
-  }
-
-} catch (error) {
-  console.log("Error:", error);
-}  
-  }
+  
 
   const handleBodega = async (e) => {
     try{
@@ -121,6 +83,8 @@ function Reportes() {
 
 
     useEffect(() => {
+
+        setSeleccionadoB(null)
  setLoading(true);  
     cargarBodegas();
      setLoading(false);  
@@ -159,6 +123,10 @@ function Reportes() {
                       </div>
 
     <p className="bg-red-900 p-1 text-center text-white mt-2">MENÚ PRINCIPAL </p>
+
+   <div onClick={menu} className="flex  flex-row justify-between p-2 rounded mt-1 border text-center font-bold text-md shadow bg-slate-500 hover:cursor-pointer text-slate-50 hover:bg-zinc-600">
+
+   </div>
                      
   </div>
 

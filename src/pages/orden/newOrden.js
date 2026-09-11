@@ -1,5 +1,5 @@
 
-import { useEffect, useState, useCallback, useRef} from "react";
+/*import { useEffect, useState, useCallback, useRef} from "react";
 import { jwtDecode } from "jwt-decode";
 import api from "../../api/axios";
 import Spinner from "../../componets/Spinner";
@@ -13,10 +13,11 @@ import { IoArrowBack } from "react-icons/io5";
 import { IoPersonSharp } from "react-icons/io5";
 import { IoSave } from "react-icons/io5";
 import { RiFileAddFill } from "react-icons/ri";
-import { BiSolidCreditCardFront } from "react-icons/bi";
+import { BiSolidCreditCardFront } from "react-icons/bi";*/
 
 function NewOrden() {
-    const fecha = new Date().toLocaleDateString("es-EC", {
+
+  /*  const fecha = new Date().toLocaleDateString("es-EC", {
     weekday: "long",
     year: "numeric",
     month: "long",
@@ -76,7 +77,7 @@ function NewOrden() {
     dibujarPlano();
   }, []);*/
 
-    
+    /*
     const cargarDatos = useCallback(async () => {
 
     setLoading(true);
@@ -167,14 +168,19 @@ function NewOrden() {
   }, [cargarDatos]);
 
 
-
+*/
   return (
-
+    
+    <div>
+      hola
+      
+      { /*
   
 
 <div className="h-screen">
+ 
 
-     
+    
       <div className="flex bg-gray-700 text-zinc-50 p-2 font-bold uppercase gap-1 items-center "><CgFormatJustify /> ORDEN DE SERVICIO  <BsCalendarDateFill className="ml-8" /> {fecha} </div>
     {loading && <Spinner fullScreen size="lg" text="Procesando..."  />}
    
@@ -258,8 +264,22 @@ function NewOrden() {
 
       </Modal>
 
+ss
 </div>
   );
 }
+  */ }
 
-export default NewOrden;
+      
+      
+      
+      </div>
+    
+
+
+  )
+}
+
+  export default NewOrden;
+
+  
