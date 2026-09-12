@@ -6,6 +6,7 @@ import Swal from 'sweetalert2'
 import { FaFacebookSquare } from "react-icons/fa";
 import { SlSocialInstagram } from "react-icons/sl";
 import { MdMail } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 
 
 function Login() {
@@ -15,6 +16,8 @@ function Login() {
 
   const [cedula, setCedula] = useState("");
   const [clave ,setClave] = useState("");
+   const navigate = useNavigate();
+
 
 
   const password= btoa(unescape(encodeURIComponent(clave)));
@@ -53,7 +56,8 @@ function Login() {
       setLoading(false);
 
       localStorage.setItem("token", res.data.token);
-      window.location.href = "/dashboard";
+      navigate("/dashboard");
+      //window.location.href = "/dashboard";
 
     } catch (error) {
      
