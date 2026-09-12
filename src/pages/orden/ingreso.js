@@ -12,9 +12,11 @@ import Swal from 'sweetalert2'
   import { IoMdArrowBack } from "react-icons/io";
   import { IoCaretBack } from "react-icons/io5";
   import { IoCaretForward } from "react-icons/io5";
+  import { useNavigate } from "react-router-dom";
 
 function Ingreso() {
 
+  const navigate = useNavigate();
   const [ingreso, SetIngreso] = useState(true);
   const [textTipo, settextTipo] = useState("Ingreso");
   const [datos, setDatos] = useState([]);
@@ -233,7 +235,7 @@ setidBodega(0)
 
 
   const menu = () => {
-     window.location.href = "/dashboard";
+    navigate("/dashboard");
   }
   const pantallaset = (value) => 
   {

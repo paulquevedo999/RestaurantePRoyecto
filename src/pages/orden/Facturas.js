@@ -8,9 +8,11 @@ import Swal from 'sweetalert2'
 import { FaFileInvoiceDollar } from "react-icons/fa6";
 import { FiRefreshCcw } from "react-icons/fi";
 import { SiFluentd } from "react-icons/si";
+import { useNavigate } from "react-router-dom";
 
 function Facturas() {
 
+ const navigate = useNavigate();
   const [datos, setDatos] = useState([]);
   const token = localStorage.getItem("token");
   const [loading, setLoading] = useState(true);
@@ -34,7 +36,8 @@ function Facturas() {
 
 
   const menu =  () => {
-     window.location.href = "/dashboard";
+    navigate("/dashboard");
+     
   }
   const sri = async (claveAcceso,ambiente,idf) => {
 

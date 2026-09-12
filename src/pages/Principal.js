@@ -10,10 +10,12 @@ import { SiReadthedocs } from "react-icons/si";
 import { RiStockFill } from "react-icons/ri";
 import { GiCube } from "react-icons/gi";
 import Footer from "../componets/Footer"
+import { useNavigate } from "react-router-dom";
 
 import { FaFileInvoiceDollar } from "react-icons/fa6";
 
 function Principal() {
+   const navigate = useNavigate();
 
    const cerrarSesion = () => {
     localStorage.removeItem("token");
@@ -22,8 +24,9 @@ function Principal() {
 
   
      const xautorizar = () => {
+      navigate("/facturasxautorizar");
     
-     window.location.href = "/facturasxautorizar";
+     
   };
 
 
@@ -33,17 +36,21 @@ function Principal() {
   };
 */
   const bodega = () => {
+    navigate("/bodega");
     
-     window.location.href = "/bodega";
+     
   };
 
   const reportes = () => {
+      navigate("/reportes");
     
-     window.location.href = "/reportes";
+    
   };
    const ingreso = () => {
+
+    navigate("/ingreso");
     
-     window.location.href = "/ingreso";
+     
   };
 
    const token = localStorage.getItem("token");

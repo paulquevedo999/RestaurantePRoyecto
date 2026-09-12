@@ -6,8 +6,10 @@ import { FaSave } from "react-icons/fa";
 import Swal from 'sweetalert2'
 import { FaPen } from "react-icons/fa";
 import { MdStorage } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 
 function Bodega() {
+  const navigate = useNavigate();
 
     const [estado, setEstado] = useState("1")  
      const [datos, setDatos] = useState([]);
@@ -36,7 +38,7 @@ function Bodega() {
     
     const menuPrincipal= () => {
     
-        window.location.href = "/dashboard";
+        navigate("/dashboard");
     };
 
  
