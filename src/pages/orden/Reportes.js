@@ -125,10 +125,10 @@ const navigate = useNavigate();
                            ))}
                       </div>
 
-    <p className="bg-red-900 p-1 text-center text-white mt-2">IR MENÚ PRINCIPAL </p>
+    <p className="bg-red-900 p-1 text-center text-white mt-2">MENÚ PRINCIPAL </p>
 
    <div onClick={menu} className="flex  flex-row justify-between p-2 rounded mt-2 border text-center font-bold text-md shadow bg-slate-500 hover:cursor-pointer text-slate-50 hover:bg-zinc-600">
-
+                           REGRESAR
    </div>
                      
   </div>
