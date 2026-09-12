@@ -10,9 +10,10 @@ import { MdForward } from "react-icons/md";
 
   import { SiReadthedocs } from "react-icons/si";
   import { BiSolidSearch } from "react-icons/bi";
+  import { useNavigate } from "react-router-dom";
 
 function Reportes() {
-
+const navigate = useNavigate();
   const [datos, setDatos] = useState([]);
     const [datosb, setDatosb] = useState([]);
 
@@ -70,7 +71,9 @@ function Reportes() {
 
 
   const menu = () => {
-     window.location.href = "/dashboard";
+
+    navigate("/dashboard");
+     
   }
 
   const datePipe = (fecha) => {
@@ -122,9 +125,9 @@ function Reportes() {
                            ))}
                       </div>
 
-    <p className="bg-red-900 p-1 text-center text-white mt-2">MENÚ PRINCIPAL </p>
+    <p className="bg-red-900 p-1 text-center text-white mt-2">IR MENÚ PRINCIPAL </p>
 
-   <div onClick={menu} className="flex  flex-row justify-between p-2 rounded mt-1 border text-center font-bold text-md shadow bg-slate-500 hover:cursor-pointer text-slate-50 hover:bg-zinc-600">
+   <div onClick={menu} className="flex  flex-row justify-between p-2 rounded mt-2 border text-center font-bold text-md shadow bg-slate-500 hover:cursor-pointer text-slate-50 hover:bg-zinc-600">
 
    </div>
                      
