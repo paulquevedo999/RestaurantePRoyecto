@@ -19,7 +19,8 @@ function Principal() {
 
    const cerrarSesion = () => {
     localStorage.removeItem("token");
-    window.location.href = "/";
+      navigate("/");
+    
   };
 
   
