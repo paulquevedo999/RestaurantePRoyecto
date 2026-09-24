@@ -67,7 +67,7 @@ function Principal() {
     
     
      const decoded = jwtDecode(token);
-     if(decoded?.expiredAt){
+     if(decoded?.expiredAt  * 1000 < Date.now()){
       
       localStorage.removeItem("token");
       navigate("/login");
