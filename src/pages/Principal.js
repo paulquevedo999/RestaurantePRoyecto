@@ -65,11 +65,17 @@ useEffect(() => {
   const cargarDatos = () => {
 
     const token = localStorage.getItem("token");
-
+    
     // No existe token
     if (!token) {
       navigate("/login");
       return;
+    }
+    else{
+      setUser(jwtDecode(token))
+      console.log('')
+
+
     }
 
     try {
@@ -174,10 +180,10 @@ useEffect(() => {
         </div>
 
          <Footer className="fixed bottom-0 left-0 z-50 w-full bg-[#142234] text-white"
-        empresa= {'   - ' + user.usuarioNombreComercial + '  / RUC: ' + user.usuarioAgenciaruc}
+        empresa= {'   - ' + user?.usuarioNombreComercial + '  / RUC: ' + user?.usuarioAgenciaruc}
         sistema="PRODUCCIÓN" 
-        version="1.0.0.0"
-        usuario={user.usuarioname + ' ' + user.usuarioapellido}
+        version="1.0"
+        usuario={user?.usuarioname + ' ' + user?.usuarioapellido}
       />
 
 
