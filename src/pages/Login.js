@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState  } from "react";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import api from "../api/axios";
 import Spinner from "../componets/Spinner";
@@ -53,7 +53,7 @@ function Login() {
         cedula,
         password,
       });
-      setLoading(false);
+     setLoading(false);
 
       localStorage.setItem("token", res.data.token);
       navigate("/dashboard");
@@ -73,8 +73,15 @@ function Login() {
     }
   }
   
+
+
+
+
+   
+  
   
   };
+  
 
   return (
 
@@ -87,17 +94,17 @@ function Login() {
         <p className="text-center   font-extrabold text-4xl  p-1 rounded-xl text-gray-50 font-montserrat">Inicio de Sesión</p>
     <form onSubmit={handleLogin} className="flex flex-col  p-8 ">
       <label className="label_eti1">Cédula: </label>
-      <input className="caja_detexto"
+      <input className="caja_detexto" required
         type="text"
    
         value={cedula}
         onChange={(e) => setCedula(e.target.value)}
       />
     
-      {loading && <Spinner fullScreen size="lg" text="Procesando..."  />}
+      {loading && <Spinner fullScreen size="lg" text="Iniciando Sesión..."  />}
 
-      <label className="label_eti1">Contraseña: </label>
-      <input className="caja_detexto"
+      <label className="label_eti1" >Contraseña: </label>
+      <input className="caja_detexto" required
         type="password"
        
         value={clave}
@@ -108,7 +115,7 @@ function Login() {
 
      
 
-      <button className="btn-login mt-4" type="submit" >
+      <button className="btn-login mt-4 " type="submit" >
         Iniciar sesión
       </button>
     </form>
@@ -118,7 +125,7 @@ function Login() {
         <div className="social bg-stone-500 " ><MdMail /></div>
       
      </div>
-     <p className="text-slate-400 text-center pt-4 font-bold font text-xs" >Versión: 1.0.0</p>
+     <p className="text-slate-400 text-center pt-4 font-bold font text-xs hover:scale-110" >Versión: 1.0.0</p>
     </div>
     
     

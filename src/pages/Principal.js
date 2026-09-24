@@ -1,7 +1,8 @@
 //import { CgAdd } from "react-icons/cg";
 import { HiLockClosed } from "react-icons/hi2";
 
-import { useEffect, useState, useCallback } from "react";
+
+import { useEffect, useState } from "react";
 import { jwtDecode } from "jwt-decode";
 
 
@@ -61,15 +62,24 @@ function Principal() {
    
 
 
-   const cargarDatos = useCallback(async () => {
+   const cargarDatos = () => {
 
     
     
      const decoded = jwtDecode(token);
+     if(decoded?.expiredAt){
+      
+      localStorage.removeItem("token");
+      navigate("/login");
+     
+      
+     }
+     else{
      setUser(decoded);
+     }
   
 
-  },[token])
+  }
 
 
      useEffect(() => {
@@ -77,7 +87,7 @@ function Principal() {
     cargarDatos();
 
     
-  }, [cargarDatos]);
+  });
 
 
   return (

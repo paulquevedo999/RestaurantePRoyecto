@@ -18,7 +18,16 @@ function Spinner({
   };
 
   const spinner = (
+
+    
     <div className="flex flex-col items-center justify-center gap-2">
+    {/*  <span className={`
+          
+         
+        
+           loader  `}
+      
+      ></span> */}
       <div
         className={`
           ${sizes[size]}
@@ -28,6 +37,8 @@ function Spinner({
           animate-spin
         `}
       ></div>
+
+      
 
       {text && <p className="text-sm text-gray-700">{text}</p>}
     </div>
