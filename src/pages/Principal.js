@@ -16,6 +16,7 @@ import { useNavigate } from "react-router-dom";
 import { FaFileInvoiceDollar } from "react-icons/fa6";
 
 function Principal() {
+  const [user, setUser] = useState(null);
    const navigate = useNavigate();
 
    const cerrarSesion = () => {
@@ -32,11 +33,7 @@ function Principal() {
   };
 
 
-  /* const newOrden = () => {
-    
-     window.location.href = "/newOrden";
-  };
-*/
+
   const bodega = () => {
     navigate("/bodega");
     
@@ -55,40 +52,58 @@ function Principal() {
      
   };
 
-   const token = localStorage.getItem("token");
-    const [user, setUser] = useState([]);
-
-
+ 
+   
    
 
 
-   const cargarDatos = () => {
+
+
+
+useEffect(() => {
+
+  const cargarDatos = () => {
+
+    const token = localStorage.getItem("token");
+
+    // No existe token
+    if (!token) {
+      navigate("/login");
+      return;
+    }
+
+    try {
+
+      const decoded = jwtDecode(token);
+
+      
+      if (decoded?.expiredAt && decoded.expiredAt * 1000 < Date.now()) {
+
+       
+
+        localStorage.removeItem("token");
+        navigate("/login");
+        return;
+      }
+
+      // Token válido
+      setUser(decoded);
+
+    } catch (error) {
 
     
-    
-     const decoded = jwtDecode(token);
-     if(decoded?.expiredAt  * 1000 < Date.now()){
-      
+
       localStorage.removeItem("token");
       navigate("/login");
-     
-      
-     }
-     else{
-     setUser(decoded);
-     }
+    }
+  };
+
+  cargarDatos();
+
+}, [navigate]);
+
+
   
-
-  }
-
-
-     useEffect(() => {
-
-    cargarDatos();
-
-    
-  });
-
 
   return (
 
